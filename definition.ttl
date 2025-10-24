@@ -121,6 +121,10 @@ dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
   dct:description "Triples where predicates are from DBpedia ontology. Use case: structured fact retrieval, ontology evolution tracking, and domain-specific querying. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties)" ;
   sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ] .
 
+
+# this one is bad in terms of shacl and description. 
+# idea: use this export from prefix.cc https://github.com/dbpedia/group-artifact-definition/blob/main/input/prefix-cc-2025-10-24-all.file.txt to tackle vocab. You need to deduplicate the file from top. most popular is on on top.
+# that way we will get vocab=dbp or other cv's. 
 <raw-source-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "Raw Source Properties" ;
   dct:description "Triples using vocabularies from external sources. Use case: data fusion, vocabulary discovery, and schema learning from open data. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties)" ;
