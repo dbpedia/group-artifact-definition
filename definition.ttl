@@ -15,6 +15,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix georss: <http://www.georss.org/georss/> .
 @prefix schema: <http://schema.org/> .
 @prefix gold: <http://purl.org/linguistics/gold/> .
@@ -23,7 +24,11 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dbpedia: <https://databus.dbpedia.org/dbpedia/> .
 @prefix dbpedia-enterprise: <https://databus.dbpedia.org/dbpedia-enterprise/> .
-@prefix dbpedia-io: <https://databus.dbpedia.org/dbpedia-enterprise/> .
+@prefix dbpedia-io: <https://databus.dbpedia.org/dbpedia-io/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rule: <https://example.org/rule#> .
 
 ########################################################
 # Group Definitions
@@ -60,72 +65,74 @@ dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 <geo-coordinates> a databus:Artifact, sh:NodeShape ;
   dct:title "Geo Coordinates" ;
   dct:description "Spatial information including coordinates and geometry data. Use case: enables geo-visualization, mapping, and linking DBpedia entities to geospatial datasets (e.g., GeoNames). [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates)" ;
-  sh:property [ sh:path geo:geometry ; dct:description "WKT geometry representation, used for spatial queries and geometric reasoning." ];
-  sh:property [ sh:path geo:lat ; dct:description "Latitude for mapping and geolocation search." ];
-  sh:property [ sh:path geo:long ; dct:description "Longitude for mapping and geolocation search." ];
-  sh:property [ sh:path georss:point ; dct:description "Compact representation for GeoRSS feeds." ];
-  sh:property [ sh:path rdf:type ; sh:hasValue geo:spatialThing ; dct:description "Type classification for spatial resources." ] .
+  sh:property [ sh:path geo:geometry ; rule:fileName "geo-coordinates_geo-geometry" ; dct:description "WKT geometry representation, used for spatial queries and geometric reasoning."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path geo:lat ; rule:fileName "geo-coordinates_geo-lat" ; dct:description "Latitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path geo:long ; rule:fileName "geo-coordinates_geo-long" ; dct:description "Longitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path georss:point ; rule:fileName "geo-coordinates_georss-point" ; dct:description "Compact representation for GeoRSS feeds."; rule:priority "10"^^xsd:integer  ] .
+  # sh:property [ sh:path georss:point ; rule:fileName "geo-coordinates_georss-point" ; dct:description "Compact representation for GeoRSS feeds."; rule:priority "10"^^xsd:integer  ];
+  # sh:property [ sh:path rdf:type ; sh:hasValue geo:spatialThing ; rule:fileName "geo-coordinates_rdf-type_geo-spatialThing" ; dct:description "Type classification for spatial resources." ; rule:priority "0"^^xsd:integer ] .
 
 <skos-categories> a databus:Artifact, sh:NodeShape ;
   dct:title "SKOS Categories" ;
   dct:description "Category structures and semantic relations modeled as SKOS concepts. Use case: supports topic classification, content recommendation, and taxonomy alignment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories)" ;
-  sh:property [ sh:path dct:subject ; dct:description "Links resources to Wikipedia category topics." ];
-  sh:property [ sh:path skos:broader ; dct:description "Defines parent categories for hierarchical browsing." ];
-  sh:property [ sh:path skos:exactMatch ; dct:description "Interlinks equivalent categories across datasets." ];
-  sh:property [ sh:path skos:prefLabel ; dct:description "Human-readable category name for display." ];
-  sh:property [ sh:path skos:related ; dct:description "Associative relation for cross-topic navigation." ];
-  sh:property [ sh:path skos:definition ; dct:description "Textual definition used for semantic search and explanations." ];
-  sh:property [ sh:path rdf:type ; sh:hasValue skos:Concept ] .
+  sh:property [ sh:path dct:subject ; rule:fileName "skos-categories_dct-subject" ; dct:description "Links resources to Wikipedia category topics."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:broader ; rule:fileName "skos-categories_skos-broader" ; dct:description "Defines parent categories for hierarchical browsing."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:exactMatch ; rule:fileName "skos-categories_skos-exactMatch" ; dct:description "Interlinks equivalent categories across datasets."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:prefLabel ; rule:fileName "skos-categories_skos-prefLabel" ; dct:description "Human-readable category name for display."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:related ; rule:fileName "skos-categories_skos-related" ; dct:description "Associative relation for cross-topic navigation."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:definition ; rule:fileName "skos-categories_skos-definition" ; dct:description "Textual definition used for semantic search and explanations."; rule:priority "10"^^xsd:integer  ] .
+  # sh:property [ sh:path skos:definition ; rule:fileName "skos-categories_skos-definition" ; dct:description "Textual definition used for semantic search and explanations."; rule:priority "10"^^xsd:integer  ];
+  # sh:property [ sh:path rdf:type ; sh:hasValue skos:Concept ; rule:fileName "skos-categories_rdf-type_skos-concept" ; rule:priority "0"^^xsd:integer ] .
 
 <textual-descriptions> a databus:Artifact, sh:NodeShape ;
   dct:title "Textual Descriptions" ;
   dct:description "Abstracts, comments, and descriptions of entities. Use case: entity summarization, search indexing, LLM fine-tuning, and QA over knowledge text. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions)" ;
-  sh:property [ sh:path dct:abstract ; dct:description "Standard abstract used for general summaries." ];
-  sh:property [ sh:path dc:description ; dct:description "Free-text descriptions extracted from source content." ];
-  sh:property [ sh:path dbo:abstract ; dct:description "Language-specific DBpedia abstracts used for search and AI applications." ];
-  sh:property [ sh:path dbo:shortabstract ; dct:description "Short summaries for UI displays." ];
-  sh:property [ sh:path rdfs:comment ; dct:description "Comments used for knowledge enrichment." ];
-  sh:property [ sh:path schema:description ; dct:description "Schema.org compatible text for interoperability." ] .
+  sh:property [ sh:path dct:abstract ; rule:fileName "textual-descriptions_dct-abstract" ; dct:description "Standard abstract used for general summaries."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path dc:description ; rule:fileName "textual-descriptions_dc-description" ; dct:description "Free-text descriptions extracted from source content."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path dbo:abstract ; rule:fileName "textual-descriptions_dbo-abstract" ; dct:description "Language-specific DBpedia abstracts used for search and AI applications."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path dbo:shortabstract ; rule:fileName "textual-descriptions_dbo-shortabstract" ; dct:description "Short summaries for UI displays."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdfs:comment ; rule:fileName "textual-descriptions_rdfs-comment" ; dct:description "Comments used for knowledge enrichment."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:description ; rule:fileName "textual-descriptions_schema-description" ; dct:description "Schema.org compatible text for interoperability." ; rule:priority "10"^^xsd:integer ] .
 
 <labels> a databus:Artifact, sh:NodeShape ;
   dct:title "Labels" ;
   dct:description "Entity naming triples for multilingual label lookup. Use case: entity resolution, multilingual NLP, and name disambiguation. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels)" ;
-  sh:property [ sh:path dbo:alias ; dct:description "Alternative names and aliases." ];
-  sh:property [ sh:path rdfs:label ; dct:description "Canonical label in multiple languages." ];
-  sh:property [ sh:path schema:name ; dct:description "Primary name used by Schema.org applications." ];
-  sh:property [ sh:path schema:alternateName ; dct:description "Alternate names for NLP matching." ];
-  sh:property [ sh:path gold:hypernym ; dct:description "Lexical relations useful for ontology enrichment." ] .
+  sh:property [ sh:path dbo:alias ; rule:fileName "labels_dbo-alias" ; dct:description "Alternative names and aliases."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rule:fileName ; rule:fileName "labels_rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:name ; rule:fileName "labels_schema-name" ; dct:description "Primary name used by Schema.org applications."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:alternateName ; rule:fileName "labels_schema-alternateName" ; dct:description "Alternate names for NLP matching."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path gold:hypernym ; rule:fileName "labels_gold-hypernym" ; dct:description "Lexical relations useful for ontology enrichment." ; rule:priority "10"^^xsd:integer ] .
 
 <instance-types> a databus:Artifact, sh:NodeShape ;
   dct:title "Instance Types" ;
   dct:description "Instance-class links for ontology alignment. Use case: reasoning, schema integration, and KG summarization. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types)" ;
-  sh:property [ sh:path rdf:type ; dct:description "RDF type relation defining class membership." ];
-  sh:property [ sh:path schema:type ; dct:description "Schema.org type alignment for web data interoperability." ] .
+  sh:property [ sh:path rdf:type ; rule:fileName "instance-types_rdf-type" ; dct:description "RDF type relation defining class membership."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:type ; rule:fileName "instance-types_schema-type" ; dct:description "Schema.org type alignment for web data interoperability." ; rule:priority "10"^^xsd:integer ] .
 
 <links> a databus:Artifact, sh:NodeShape ;
   dct:title "Links" ;
   dct:description "Inter-dataset identity and linkage triples. Use case: cross-KG linking, entity resolution, and identity propagation across knowledge bases. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links)" ;
-  sh:property [ sh:path owl:sameAs ; dct:description "Identity link connecting identical entities across datasets." ];
-  sh:property [ sh:path owl:differentFrom ; dct:description "Explicit distinction between similar but non-identical entities." ];
-  sh:property [ sh:path rdfs:seeAlso ; dct:description "Reference link for additional information resources." ];
-  sh:property [ sh:path schema:sameAs ; dct:description "Schema.org alignment link." ];
-  sh:property [ sh:path wikidata:P2888 ; dct:description "Exact match link to Wikidata property P2888 (exact external match)." ] .
+  sh:property [ sh:path owl:sameAs ; rule:fileName "links_owl-sameAs" ; dct:description "Identity link connecting identical entities across datasets."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path owl:differentFrom ; rule:fileName "links_owl-differentFrom" ; dct:description "Explicit distinction between similar but non-identical entities."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdfs:seeAlso ; rule:fileName "links_rdfs-seeAlso" ; dct:description "Reference link for additional information resources."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:sameAs ; rule:fileName "links_schema-sameAs" ; dct:description "Schema.org alignment link."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path wikidata:P2888 ; rule:fileName "links_wikidata-P2888" ; dct:description "Exact match link to Wikidata property P2888 (exact external match)." ; rule:priority "10"^^xsd:integer ] .
 
 <redirects> a databus:Artifact, sh:NodeShape ;
   dct:title "Redirects" ;
   dct:description "Redirect mapping triples. Use case: canonicalization, duplicate removal, and Wikipedia URI resolution. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=redirects)" ;
-  sh:property [ sh:path dbo:redirects ; dct:description "Maps old or alternate URIs to canonical ones." ] .
+  sh:property [ sh:path dbo:redirects ; rule:fileName "redirects_dbo-redirects" ; dct:description "Maps old or alternate URIs to canonical ones." ; rule:priority "10"^^xsd:integer ] .
 
 <dbpedia-ontology-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "DBpedia Ontology Properties" ;
   dct:description "Triples where predicates are from DBpedia ontology. Use case: structured fact retrieval, ontology evolution tracking, and domain-specific querying. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties)" ;
-  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ] .
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; rule:fileName "dbpedia-ontology-properties" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ; rule:priority "20"^^xsd:integer ] .
 
 
-# this one is bad in terms of shacl and description. 
+# this one is bad in terms of shacl and description.
 # idea: use this export from prefix.cc https://github.com/dbpedia/group-artifact-definition/blob/main/input/prefix-cc-2025-10-24-all.file.txt to tackle vocab. You need to deduplicate the file from top. most popular is on on top.
 # that way we will get vocab=dbp or other cv's. 
 <raw-source-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "Raw Source Properties" ;
   dct:description "Triples using vocabularies from external sources. Use case: data fusion, vocabulary discovery, and schema learning from open data. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties)" ;
-  sh:property [ sh:path rdf:predicate ; sh:not [ sh:pattern "^http://dbpedia.org/" ] ; dct:description "Excludes DBpedia-internal predicates, used for detecting external vocabularies." ] .
+  sh:property [ sh:path rdf:predicate ; sh:not [ sh:pattern "^http://dbpedia.org/" ] ; rule:fileName "raw-source-properties" ; dct:description "Excludes DBpedia-internal predicates, used for detecting external vocabularies." ; rule:priority "30"^^xsd:integer ] .
