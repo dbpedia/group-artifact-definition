@@ -98,7 +98,7 @@ dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
   dct:title "Labels" ;
   dct:description "Entity naming triples for multilingual label lookup. Use case: entity resolution, multilingual NLP, and name disambiguation. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels)" ;
   sh:property [ sh:path dbo:alias ; rule:fileName "labels_dbo-alias" ; dct:description "Alternative names and aliases."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path rule:fileName ; rule:fileName "labels_rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdf:label ; rule:fileName "labels_rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:name ; rule:fileName "labels_schema-name" ; dct:description "Primary name used by Schema.org applications."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:alternateName ; rule:fileName "labels_schema-alternateName" ; dct:description "Alternate names for NLP matching."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path gold:hypernym ; rule:fileName "labels_gold-hypernym" ; dct:description "Lexical relations useful for ontology enrichment." ; rule:priority "10"^^xsd:integer ] .
