@@ -22,9 +22,9 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix databus: <https://dataid.dbpedia.org/databus#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix dbpedia: <https://databus.dbpedia.org/dbpedia/> .
-@prefix dbpedia-enterprise: <https://databus.dbpedia.org/dbpedia-enterprise/> .
-@prefix dbpedia-io: <https://databus.dbpedia.org/dbpedia-io/> .
+@prefix databus-dbpedia: <https://databus.dbpedia.org/dbpedia/> . # add databus
+@prefix databus-dbpedia-enterprise: <https://databus.dbpedia.org/dbpedia-enterprise/> .
+@prefix databus-dbpedia-io: <https://databus.dbpedia.org/dbpedia-io/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix wikidata: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -34,27 +34,23 @@
 # Group Definitions
 ########################################################
 
-dbpedia-enterprise:live-fusion-kg-snapshot a databus:Group ;
+databus-dbpedia-enterprise:live-fusion-kg-snapshot a databus:Group ;
   dct:title "DBpedia Live Fusion KG Snapshot" ;
   dct:description "Continuously updated fusion of Wikipedia and Wikidata sources into a unified KG snapshot. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=live-fusion-kg-snapshot)" .
 
-dbpedia-io:live-fusion-kg-snapshot a databus:Group ;
-  dct:title "DBpedia.io Live Fusion KG Snapshot" ;
-  dct:description "Internal deployment group for DBpedia.io Live Fusion KG snapshot. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=io-live-fusion-kg-snapshot)" .
-
-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-snapshot a databus:Group ;
+databus-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-snapshot a databus:Group ;
   dct:title "DBpedia Wikipedia KG Enriched Snapshot" ;
   dct:description "DBpedia-based enrichment of structured Wikipedia extractions. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot)" .
 
-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-snapshot a databus:Group ;
+databus-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-snapshot a databus:Group ;
   dct:title "DBpedia Wikidata KG Enriched Snapshot" ;
   dct:description "DBpedia-based enrichment of structured Wikidata extractions. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikidata-kg-enriched-snapshot)" .
 
-dbpedia:dbpedia-wikipedia-kg-snapshot a databus:Group ;
+databus-dbpedia:dbpedia-wikipedia-kg-snapshot a databus:Group ;
   dct:title "DBpedia Wikipedia KG Snapshot" ;
   dct:description "Original extraction of structured Wikipedia data before enrichment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-snapshot)" .
 
-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
+databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
   dct:title "DBpedia Wikidata KG Snapshot" ;
   dct:description "Original extraction of structured Wikidata data before enrichment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikidata-kg-snapshot)" .
 
@@ -65,68 +61,68 @@ dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 <geo-coordinates> a databus:Artifact, sh:NodeShape ;
   dct:title "Geo Coordinates" ;
   dct:description "Spatial information including coordinates and geometry data. Use case: enables geo-visualization, mapping, and linking DBpedia entities to geospatial datasets (e.g., GeoNames). [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates)" ;
-  sh:property [ sh:path geo:geometry ; rule:fileName "geo-coordinates_geo-geometry" ; dct:description "WKT geometry representation, used for spatial queries and geometric reasoning."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path geo:lat ; rule:fileName "geo-coordinates_geo-lat" ; dct:description "Latitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path geo:long ; rule:fileName "geo-coordinates_geo-long" ; dct:description "Longitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path georss:point ; rule:fileName "geo-coordinates_georss-point" ; dct:description "Compact representation for GeoRSS feeds."; rule:priority "10"^^xsd:integer  ] .
-  # sh:property [ sh:path georss:point ; rule:fileName "geo-coordinates_georss-point" ; dct:description "Compact representation for GeoRSS feeds."; rule:priority "10"^^xsd:integer  ];
-  # sh:property [ sh:path rdf:type ; sh:hasValue geo:spatialThing ; rule:fileName "geo-coordinates_rdf-type_geo-spatialThing" ; dct:description "Type classification for spatial resources." ; rule:priority "0"^^xsd:integer ] .
+  sh:property [ sh:path geo:geometry ; rule:fileName "geo-coordinates_graph=X_partition=geo-geometry" ; dct:description "WKT geometry representation, used for spatial queries and geometric reasoning."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path geo:lat ; rule:fileName "geo-coordinates_graph=X_partition=geo-lat" ; dct:description "Latitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path geo:long ; rule:fileName "geo-coordinates_graph=X_partition=geo-long" ; dct:description "Longitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path georss:point ; rule:fileName "geo-coordinates_graph=X_partition=georss-point" ; dct:description "Compact representation for GeoRSS feeds."; rule:priority "10"^^xsd:integer  ] .
+  # sh:property [ sh:path georss:point ; rule:fileName "geo-coordinates_graph=X_partition=georss-point" ; dct:description "Compact representation for GeoRSS feeds."; rule:priority "10"^^xsd:integer  ];
+  # sh:property [ sh:path rdf:type ; sh:hasValue geo:spatialThing ; rule:fileName "geo-coordinates_graph=X_partition=rdf-type-geo-spatialThing" ; dct:description "Type classification for spatial resources." ; rule:priority "0"^^xsd:integer ] .
 
 <skos-categories> a databus:Artifact, sh:NodeShape ;
   dct:title "SKOS Categories" ;
   dct:description "Category structures and semantic relations modeled as SKOS concepts. Use case: supports topic classification, content recommendation, and taxonomy alignment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories)" ;
-  sh:property [ sh:path dct:subject ; rule:fileName "skos-categories_dct-subject" ; dct:description "Links resources to Wikipedia category topics."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path skos:broader ; rule:fileName "skos-categories_skos-broader" ; dct:description "Defines parent categories for hierarchical browsing."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path skos:exactMatch ; rule:fileName "skos-categories_skos-exactMatch" ; dct:description "Interlinks equivalent categories across datasets."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path skos:prefLabel ; rule:fileName "skos-categories_skos-prefLabel" ; dct:description "Human-readable category name for display."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path skos:related ; rule:fileName "skos-categories_skos-related" ; dct:description "Associative relation for cross-topic navigation."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path skos:definition ; rule:fileName "skos-categories_skos-definition" ; dct:description "Textual definition used for semantic search and explanations."; rule:priority "10"^^xsd:integer  ] .
-  # sh:property [ sh:path skos:definition ; rule:fileName "skos-categories_skos-definition" ; dct:description "Textual definition used for semantic search and explanations."; rule:priority "10"^^xsd:integer  ];
-  # sh:property [ sh:path rdf:type ; sh:hasValue skos:Concept ; rule:fileName "skos-categories_rdf-type_skos-concept" ; rule:priority "0"^^xsd:integer ] .
+  sh:property [ sh:path dct:subject ; rule:fileName "skos-categories_graph=X_partition=dct-subject" ; dct:description "Links resources to Wikipedia category topics."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:broader ; rule:fileName "skos-categories_graph=X_partition=skos-broader" ; dct:description "Defines parent categories for hierarchical browsing."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:exactMatch ; rule:fileName "skos-categories_graph=X_partition=skos-exactMatch" ; dct:description "Interlinks equivalent categories across datasets."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:prefLabel ; rule:fileName "skos-categories_graph=X_partition=skos-prefLabel" ; dct:description "Human-readable category name for display."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:related ; rule:fileName "skos-categories_graph=X_partition=skos-related" ; dct:description "Associative relation for cross-topic navigation."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path skos:definition ; rule:fileName "skos-categories_graph=X_partition=skos-definition" ; dct:description "Textual definition used for semantic search and explanations."; rule:priority "10"^^xsd:integer  ] .
+  # sh:property [ sh:path skos:definition ; rule:fileName "skos-categories_graph=X_partition=skos-definition" ; dct:description "Textual definition used for semantic search and explanations."; rule:priority "10"^^xsd:integer  ];
+  # sh:property [ sh:path rdf:type ; sh:hasValue skos:Concept ; rule:fileName "skos-categories_graph=X_partition=rdf-type-skos-concept" ; rule:priority "0"^^xsd:integer ] .
 
 <textual-descriptions> a databus:Artifact, sh:NodeShape ;
   dct:title "Textual Descriptions" ;
   dct:description "Abstracts, comments, and descriptions of entities. Use case: entity summarization, search indexing, LLM fine-tuning, and QA over knowledge text. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions)" ;
-  sh:property [ sh:path dct:abstract ; rule:fileName "textual-descriptions_dct-abstract" ; dct:description "Standard abstract used for general summaries."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path dc:description ; rule:fileName "textual-descriptions_dc-description" ; dct:description "Free-text descriptions extracted from source content."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path dbo:abstract ; rule:fileName "textual-descriptions_dbo-abstract" ; dct:description "Language-specific DBpedia abstracts used for search and AI applications."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path dbo:shortabstract ; rule:fileName "textual-descriptions_dbo-shortabstract" ; dct:description "Short summaries for UI displays."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path rdfs:comment ; rule:fileName "textual-descriptions_rdfs-comment" ; dct:description "Comments used for knowledge enrichment."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path schema:description ; rule:fileName "textual-descriptions_schema-description" ; dct:description "Schema.org compatible text for interoperability." ; rule:priority "10"^^xsd:integer ] .
+  sh:property [ sh:path dct:abstract ; rule:fileName "textual-descriptions_graph=X_partition=dct-abstract" ; dct:description "Standard abstract used for general summaries."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path dc:description ; rule:fileName "textual-descriptions_graph=X_partition=dc-description" ; dct:description "Free-text descriptions extracted from source content."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path dbo:abstract ; rule:fileName "textual-descriptions_graph=X_partition=dbo-abstract" ; dct:description "Language-specific DBpedia abstracts used for search and AI applications."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path dbo:shortabstract ; rule:fileName "textual-descriptions_graph=X_partition=dbo-shortabstract" ; dct:description "Short summaries for UI displays."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdfs:comment ; rule:fileName "textual-descriptions_graph=X_partition=rdfs-comment" ; dct:description "Comments used for knowledge enrichment."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:description ; rule:fileName "textual-descriptions_graph=X_partition=schema-description" ; dct:description "Schema.org compatible text for interoperability." ; rule:priority "10"^^xsd:integer ] .
 
 <labels> a databus:Artifact, sh:NodeShape ;
   dct:title "Labels" ;
   dct:description "Entity naming triples for multilingual label lookup. Use case: entity resolution, multilingual NLP, and name disambiguation. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels)" ;
-  sh:property [ sh:path dbo:alias ; rule:fileName "labels_dbo-alias" ; dct:description "Alternative names and aliases."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path rdf:label ; rule:fileName "labels_rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path schema:name ; rule:fileName "labels_schema-name" ; dct:description "Primary name used by Schema.org applications."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path schema:alternateName ; rule:fileName "labels_schema-alternateName" ; dct:description "Alternate names for NLP matching."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path gold:hypernym ; rule:fileName "labels_gold-hypernym" ; dct:description "Lexical relations useful for ontology enrichment." ; rule:priority "10"^^xsd:integer ] .
+  sh:property [ sh:path dbo:alias ; rule:fileName "labels_graph=X_partition=dbo-alias" ; dct:description "Alternative names and aliases."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdf:label ; rule:fileName "labels_graph=X_partition=rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:name ; rule:fileName "labels_graph=X_partition=schema-name" ; dct:description "Primary name used by Schema.org applications."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:alternateName ; rule:fileName "labels_graph=X_partition=schema-alternateName" ; dct:description "Alternate names for NLP matching."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path gold:hypernym ; rule:fileName "labels_graph=X_partition=gold-hypernym" ; dct:description "Lexical relations useful for ontology enrichment." ; rule:priority "10"^^xsd:integer ] .
 
 <instance-types> a databus:Artifact, sh:NodeShape ;
   dct:title "Instance Types" ;
   dct:description "Instance-class links for ontology alignment. Use case: reasoning, schema integration, and KG summarization. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types)" ;
-  sh:property [ sh:path rdf:type ; rule:fileName "instance-types_rdf-type" ; dct:description "RDF type relation defining class membership."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path schema:type ; rule:fileName "instance-types_schema-type" ; dct:description "Schema.org type alignment for web data interoperability." ; rule:priority "10"^^xsd:integer ] .
+  sh:property [ sh:path rdf:type ; rule:fileName "instance-types_graph=X_partition=rdf-type" ; dct:description "RDF type relation defining class membership."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:type ; rule:fileName "instance-types_graph=X_partition=schema-type" ; dct:description "Schema.org type alignment for web data interoperability." ; rule:priority "10"^^xsd:integer ] .
 
 <links> a databus:Artifact, sh:NodeShape ;
   dct:title "Links" ;
   dct:description "Inter-dataset identity and linkage triples. Use case: cross-KG linking, entity resolution, and identity propagation across knowledge bases. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links)" ;
-  sh:property [ sh:path owl:sameAs ; rule:fileName "links_owl-sameAs" ; dct:description "Identity link connecting identical entities across datasets."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path owl:differentFrom ; rule:fileName "links_owl-differentFrom" ; dct:description "Explicit distinction between similar but non-identical entities."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path rdfs:seeAlso ; rule:fileName "links_rdfs-seeAlso" ; dct:description "Reference link for additional information resources."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path schema:sameAs ; rule:fileName "links_schema-sameAs" ; dct:description "Schema.org alignment link."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path wikidata:P2888 ; rule:fileName "links_wikidata-P2888" ; dct:description "Exact match link to Wikidata property P2888 (exact external match)." ; rule:priority "10"^^xsd:integer ] .
+  sh:property [ sh:path owl:sameAs ; rule:fileName "links_graph=X_partition=owl-sameAs" ; dct:description "Identity link connecting identical entities across datasets."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path owl:differentFrom ; rule:fileName "links_graph=X_partition=owl-differentFrom" ; dct:description "Explicit distinction between similar but non-identical entities."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdfs:seeAlso ; rule:fileName "links_graph=X_partition=rdfs-seeAlso" ; dct:description "Reference link for additional information resources."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path schema:sameAs ; rule:fileName "links_graph=X_partition=schema-sameAs" ; dct:description "Schema.org alignment link."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path wikidata:P2888 ; rule:fileName "links_graph=X_partition=wikidata-P2888" ; dct:description "Exact match link to Wikidata property P2888 (exact external match)." ; rule:priority "10"^^xsd:integer ] .
 
 <redirects> a databus:Artifact, sh:NodeShape ;
   dct:title "Redirects" ;
   dct:description "Redirect mapping triples. Use case: canonicalization, duplicate removal, and Wikipedia URI resolution. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=redirects)" ;
-  sh:property [ sh:path dbo:redirects ; rule:fileName "redirects_dbo-redirects" ; dct:description "Maps old or alternate URIs to canonical ones." ; rule:priority "10"^^xsd:integer ] .
+  sh:property [ sh:path dbo:redirects ; rule:fileName "redirects_graph=X_partition=dbo-redirects" ; dct:description "Maps old or alternate URIs to canonical ones." ; rule:priority "10"^^xsd:integer ] .
 
 <dbpedia-ontology-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "DBpedia Ontology Properties" ;
   dct:description "Triples where predicates are from DBpedia ontology. Use case: structured fact retrieval, ontology evolution tracking, and domain-specific querying. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties)" ;
-  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; rule:fileName "dbpedia-ontology-properties" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ; rule:priority "20"^^xsd:integer ] .
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; rule:fileName "dbpedia-ontology-properties_graph=X_partition=dbo" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ; rule:priority "20"^^xsd:integer ] .
 
 
 # this one is bad in terms of shacl and description.
@@ -135,4 +131,61 @@ dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 <raw-source-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "Raw Source Properties" ;
   dct:description "Triples using vocabularies from external sources. Use case: data fusion, vocabulary discovery, and schema learning from open data. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties)" ;
-  sh:property [ sh:path rdf:predicate ; sh:not [ sh:pattern "^http://dbpedia.org/" ] ; rule:fileName "raw-source-properties" ; dct:description "Excludes DBpedia-internal predicates, used for detecting external vocabularies." ; rule:priority "30"^^xsd:integer ] .
+  # Wikidata
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.wikidata.org/entity/P" ; rule:fileName "raw-source-properties_graph=X_partition=wd-P" ; dct:description "Wikidata properties." ; rule:priority "20"^^xsd:integer ] ;
+  # DBpedia
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/property/" ; rule:fileName "raw-source-properties_graph=X_partition=dbp" ; dct:description "English DBpedia properties." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://de.dbpedia.org/property/" ; rule:fileName "raw-source-properties_graph=X_partition=de-dbp" ; dct:description "German DBpedia properties." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://fr.dbpedia.org/property/" ; rule:fileName "raw-source-properties_graph=X_partition=fr-dbp" ; dct:description "French DBpedia properties." ; rule:priority "20"^^xsd:integer ] ;
+  # GND
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://d-nb.info/gnd/" ; rule:fileName "raw-source-properties_graph=X_partition=gnd" ; dct:description "Integrated Authority File (GND) entity URIs published by the German National Library." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://d-nb.info/standards/elementset/gnd#" ; rule:fileName "raw-source-properties_graph=X_partition=gndo" ; dct:description "GND Ontology (gndo): RDF vocabulary defining classes and properties used in the Integrated Authority File by the German National Library." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://d-nb.info/standards/elementset/agrelon#" ; rule:fileName "raw-source-properties_graph=X_partition=agrelon" ; dct:description "AGRELON (Agent Relationship Ontology): vocabulary from the German National Library describing relationships between agents such as authors, organizations, and works." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://d-nb.info/standards/elementset/dnb#" ; rule:fileName "raw-source-properties_graph=X_partition=dnbt" ; dct:description "DNB Metadata Terms (dnbt): metadata terms vocabulary used by the German National Library for bibliographic and authority data." ; rule:priority "20"^^xsd:integer ] ;
+  # Common external vocabularies with priority 20
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.loc.gov/mads/rdf/v1#" ; rule:fileName "raw-source-properties_graph=X_partition=madsrdf" ; dct:description "MADS RDF vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://id.loc.gov/ontologies/bflc/" ; rule:fileName "raw-source-properties_graph=X_partition=bflc" ; dct:description "BIBFRAME LC extensions." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://xmlns.com/foaf/0.1/" ; rule:fileName "raw-source-properties_graph=X_partition=foaf" ; dct:description "FOAF vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/1999/02/22-rdf-syntax-ns#" ; rule:fileName "raw-source-properties_graph=X_partition=rdf" ; dct:description "RDF core vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/2000/01/rdf-schema#" ; rule:fileName "raw-source-properties_graph=X_partition=rdfs" ; dct:description "RDFS vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://yago-knowledge.org/resource/" ; rule:fileName "raw-source-properties_graph=X_partition=yago" ; dct:description "YAGO vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/dc/elements/1.1/" ; rule:fileName "raw-source-properties_graph=X_partition=dc" ; dct:description "DC Elements vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/2002/07/owl#" ; rule:fileName "raw-source-properties_graph=X_partition=owl" ; dct:description "OWL vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/goodrelations/v1#" ; rule:fileName "raw-source-properties_graph=X_partition=gr" ; dct:description "GoodRelations vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/2004/02/skos/core#" ; rule:fileName "raw-source-properties_graph=X_partition=skos" ; dct:description "SKOS vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://example.org/" ; rule:fileName "raw-source-properties_graph=X_partition=ex" ; dct:description "Example vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.opengis.net/ont/geosparql#" ; rule:fileName "raw-source-properties_graph=X_partition=geo" ; dct:description "GeoSPARQL vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://data.ordnancesurvey.co.uk/ontology/spatialrelations/" ; rule:fileName "raw-source-properties_graph=X_partition=spacerel" ; dct:description "OS spatial relations vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/2001/XMLSchema#" ; rule:fileName "raw-source-properties_graph=X_partition=xsd" ; dct:description "XML Schema datatypes vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/ns/dcat#" ; rule:fileName "raw-source-properties_graph=X_partition=dcat" ; dct:description "DCAT vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/ns/org#" ; rule:fileName "raw-source-properties_graph=X_partition=org" ; dct:description "W3C Organization ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/dc/terms/" ; rule:fileName "raw-source-properties_graph=X_partition=dct" ; dct:description "DC Terms vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/linked-data/cube#" ; rule:fileName "raw-source-properties_graph=X_partition=qb" ; dct:description "RDF Data Cube vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/ns/prov#" ; rule:fileName "raw-source-properties_graph=X_partition=prov" ; dct:description "PROV ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://rdfs.org/sioc/ns#" ; rule:fileName "raw-source-properties_graph=X_partition=sioc" ; dct:description "SIOC vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/xtypes/" ; rule:fileName "raw-source-properties_graph=X_partition=xtypes" ; dct:description "XTypes vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://rdfs.org/ns/void#" ; rule:fileName "raw-source-properties_graph=X_partition=void" ; dct:description "VoID vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/net/ns/ontology-annot#" ; rule:fileName "raw-source-properties_graph=X_partition=ont" ; dct:description "Ontology annotation vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.ontotext.com/" ; rule:fileName "raw-source-properties_graph=X_partition=onto" ; dct:description "Ontotext internal vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://semanticscience.org/resource/" ; rule:fileName "raw-source-properties_graph=X_partition=sio" ; dct:description "SIO ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://schema.org/" ; rule:fileName "raw-source-properties_graph=X_partition=schema" ; dct:description "Schema.org vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.obolibrary.org/obo/" ; rule:fileName "raw-source-properties_graph=X_partition=obo" ; dct:description "OBO library vocabularies." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://id.loc.gov/ontologies/bibframe/" ; rule:fileName "raw-source-properties_graph=X_partition=bf" ; dct:description "BIBFRAME vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://sindice.com/vocab/search#" ; rule:fileName "raw-source-properties_graph=X_partition=search" ; dct:description "Sindice search vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^https://w3id.org/okn/o/sd#" ; rule:fileName "raw-source-properties_graph=X_partition=sd" ; dct:description "Software description ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/vocab/frbr/core#" ; rule:fileName "raw-source-properties_graph=X_partition=frbr" ; dct:description "FRBR core vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/ns/posix/stat#" ; rule:fileName "raw-source-properties_graph=X_partition=stat" ; dct:description "POSIX stat vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/2006/vcard/ns#" ; rule:fileName "raw-source-properties_graph=X_partition=vcard" ; dct:description "vCard ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://search.yahoo.com/searchmonkey/commerce/" ; rule:fileName "raw-source-properties_graph=X_partition=commerce" ; dct:description "Yahoo SearchMonkey commerce vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/resource/" ; rule:fileName "raw-source-properties_graph=X_partition=dbr" ; dct:description "DBpedia resources." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/ontology/bibo/" ; rule:fileName "raw-source-properties_graph=X_partition=bibo" ; dct:description "BIBO vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.productontology.org/id/" ; rule:fileName "raw-source-properties_graph=X_partition=pto" ; dct:description "Product ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/rss/1.0/" ; rule:fileName "raw-source-properties_graph=X_partition=rss" ; dct:description "RSS 1.0 vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.w3.org/ns/people#" ; rule:fileName "raw-source-properties_graph=X_partition=gldp" ; dct:description "W3C people (gldp) vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/openorg/" ; rule:fileName "raw-source-properties_graph=X_partition=oo" ; dct:description "OpenOrg vocabulary." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.geonames.org/ontology#" ; rule:fileName "raw-source-properties_graph=X_partition=geonames" ; dct:description "Geonames ontology." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://rdf.freebase.com/ns/" ; rule:fileName "raw-source-properties_graph=X_partition=fb" ; dct:description "Freebase RDF namespace." ; rule:priority "20"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://purl.org/NET/c4dm/event.owl#" ; rule:fileName "raw-source-properties_graph=X_partition=event" ; dct:description "Event ontology (C4DM)." ; rule:priority "20"^^xsd:integer ] ;
+  # Internal and fallback partitions with lower priority
+  sh:property [ sh:path rdf:predicate ; sh:pattern "^http://([a-z]{2}\\.)?dbpedia\\.org/" ; rule:fileName "raw-source-properties_graph=X_partition=dbpedia-rest" ; dct:description "Fallback for DBpedia predicates from all language editions." ; rule:priority "30"^^xsd:integer ] ;
+  sh:property [ sh:path rdf:predicate ; sh:pattern ".*" ; rule:fileName "raw-source-properties_graph=X_partition=undefined" ; dct:description "Fallback for remaining predicates not covered by other partitions." ; rule:priority "40"^^xsd:integer ] .
