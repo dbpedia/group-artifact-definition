@@ -60,7 +60,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <geo-coordinates> a databus:Artifact, sh:NodeShape ;
   dct:title "Geo Coordinates" ;
-  dct:description "Spatial information including coordinates and geometry data. Use case: enables geo-visualization, mapping, and linking DBpedia entities to geospatial datasets (e.g., GeoNames). [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates)" ;
+  dct:description "Spatial information including coordinates and geometry data. Use case: enables geo-visualization, mapping, and linking DBpedia entities to geospatial datasets (e.g., GeoNames). Information such as the longitude and latitude of entities. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates)" ;
   sh:property [ sh:path geo:geometry ; rule:fileName "geo-coordinates_graph=X_partition=geo-geometry" ; dct:description "WKT geometry representation, used for spatial queries and geometric reasoning."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path geo:lat ; rule:fileName "geo-coordinates_graph=X_partition=geo-lat" ; dct:description "Latitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path geo:long ; rule:fileName "geo-coordinates_graph=X_partition=geo-long" ; dct:description "Longitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
@@ -72,7 +72,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <skos-categories> a databus:Artifact, sh:NodeShape ;
   dct:title "SKOS Categories" ;
-  dct:description "Category structures and semantic relations modeled as SKOS concepts. Use case: supports topic classification, content recommendation, and taxonomy alignment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories)" ;
+  dct:description "SKOS category classification schema. Defines a collection of categories and their relationships. The categories and their semantic relations are represented using SKOS. Use case: supports topic classification, content recommendation, and taxonomy alignment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories)" ;
   sh:property [ sh:path dct:subject ; rule:fileName "skos-categories_graph=X_partition=dct-subject" ; dct:description "Links resources to Wikipedia category topics."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path skos:broader ; rule:fileName "skos-categories_graph=X_partition=skos-broader" ; dct:description "Defines parent categories for hierarchical browsing."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path skos:exactMatch ; rule:fileName "skos-categories_graph=X_partition=skos-exactMatch" ; dct:description "Interlinks equivalent categories across datasets."; rule:priority "10"^^xsd:integer  ];
@@ -103,7 +103,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <instance-types> a databus:Artifact, sh:NodeShape ;
   dct:title "Instance Types" ;
-  dct:description "Instance-class links for ontology alignment. Use case: reasoning, schema integration, and KG summarization. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types)" ;
+  dct:description "Entity instance types. Each entity is associated with its corresponding type. Use case: reasoning, schema integration, and KG summarization. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types)" ;
   sh:property [ sh:path rdf:type ; rule:fileName "instance-types_graph=X_partition=rdf-type" ; dct:description "RDF type relation defining class membership."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:type ; rule:fileName "instance-types_graph=X_partition=schema-type" ; dct:description "Schema.org type alignment for web data interoperability." ; rule:priority "10"^^xsd:integer ] .
 
