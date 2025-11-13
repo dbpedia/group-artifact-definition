@@ -84,7 +84,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <textual-descriptions> a databus:Artifact, sh:NodeShape ;
   dct:title "Textual Descriptions" ;
-  dct:description "Abstracts, comments, and descriptions of entities. Use case: entity summarization, search indexing, LLM fine-tuning, and QA over knowledge text. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions)" ;
+  dct:description "Textual information about entities, such as abstracts, comments, and descriptions. Use case: entity summarization, search indexing, LLM fine-tuning, and QA over knowledge text. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions)" ;
   sh:property [ sh:path dct:abstract ; rule:fileName "textual-descriptions_graph=X_partition=dct-abstract" ; dct:description "Standard abstract used for general summaries."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path dc:description ; rule:fileName "textual-descriptions_graph=X_partition=dc-description" ; dct:description "Free-text descriptions extracted from source content."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path dbo:abstract ; rule:fileName "textual-descriptions_graph=X_partition=dbo-abstract" ; dct:description "Language-specific DBpedia abstracts used for search and AI applications."; rule:priority "10"^^xsd:integer  ];
@@ -94,7 +94,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <labels> a databus:Artifact, sh:NodeShape ;
   dct:title "Labels" ;
-  dct:description "Entity naming triples for multilingual label lookup. Use case: entity resolution, multilingual NLP, and name disambiguation. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels)" ;
+  dct:description "Entity labels. Provides multilingual labels for each entity. Use case: entity resolution, multilingual NLP, and name disambiguation. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels)" ;
   sh:property [ sh:path dbo:alias ; rule:fileName "labels_graph=X_partition=dbo-alias" ; dct:description "Alternative names and aliases."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path rdf:label ; rule:fileName "labels_graph=X_partition=rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:name ; rule:fileName "labels_graph=X_partition=schema-name" ; dct:description "Primary name used by Schema.org applications."; rule:priority "10"^^xsd:integer  ];
@@ -109,7 +109,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <links> a databus:Artifact, sh:NodeShape ;
   dct:title "Links" ;
-  dct:description "Inter-dataset identity and linkage triples. Use case: cross-KG linking, entity resolution, and identity propagation across knowledge bases. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links)" ;
+  dct:description "Entity links. Links between entities across different knowledge graphs. Use case: cross-KG linking, entity resolution, and identity propagation across knowledge bases. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links)" ;
   sh:property [ sh:path owl:sameAs ; rule:fileName "links_graph=X_partition=owl-sameAs" ; dct:description "Identity link connecting identical entities across datasets."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path owl:differentFrom ; rule:fileName "links_graph=X_partition=owl-differentFrom" ; dct:description "Explicit distinction between similar but non-identical entities."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path rdfs:seeAlso ; rule:fileName "links_graph=X_partition=rdfs-seeAlso" ; dct:description "Reference link for additional information resources."; rule:priority "10"^^xsd:integer  ];
@@ -123,7 +123,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <dbpedia-ontology-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "DBpedia Ontology Properties" ;
-  dct:description "Triples where predicates are from DBpedia ontology. Use case: structured fact retrieval, ontology evolution tracking, and domain-specific querying. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties)" ;
+  dct:description "Entities information modeled using the DBpedia ontology. Contains entity triples with predicates defined in the DBpedia ontology. Use case: structured fact retrieval, ontology evolution tracking, and domain-specific querying. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties)" ;
   sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; rule:fileName "dbpedia-ontology-properties_graph=X_partition=dbo" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ; rule:priority "20"^^xsd:integer ] .
 
 
@@ -132,7 +132,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 # that way we will get vocab=dbp or other cv's. 
 <raw-source-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "Raw Source Properties" ;
-  dct:description "Triples using vocabularies from external sources. Use case: data fusion, vocabulary discovery, and schema learning from open data. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties)" ;
+  dct:description "Entity information modeled using non-DBpedia ontologies. Contains entity triples with predicates defined in other vocabularies. Use case: data fusion, vocabulary discovery, and schema learning from open data. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties)" ;
   # Wikidata
   sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.wikidata.org/entity/P" ; rule:fileName "raw-source-properties_graph=X_partition=wd-P" ; dct:description "Wikidata properties." ; rule:priority "20"^^xsd:integer ] ;
   # DBpedia
