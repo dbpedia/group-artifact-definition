@@ -307,12 +307,12 @@ The **Redirects** artifact provides mapping of entity URIs to canonical forms, s
 
 **Encoded Information:**
 
-- **Mappings** from old or alternate URIs to canonical URIs. Encoded with the **dbo:redirects** property.  
+- **Mappings** from old or alternate URIs to canonical URIs. Encoded with the **dbo:wikiPageRedirects** property.  
 
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=redirects) on the Redirects artifact.
   """ ;
   dct:abstract "Redirect mapping triples. Use case: canonicalization, duplicate removal, and Wikipedia URI resolution." ;
-  sh:property [ sh:path dbo:redirects ; rule:fileName "redirects_graph=X_partition=dbo-redirects" ; dct:description "Maps old or alternate URIs to canonical ones." ; rule:priority "10"^^xsd:integer ] .
+  sh:property [ sh:path dbo:wikiPageRedirects ; rule:fileName "redirects_graph=X_partition=dbo-wikiPageRedirects" ; dct:description "Maps old or alternate URIs to canonical ones." ; rule:priority "10"^^xsd:integer ] .
 
 <dbpedia-ontology-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "DBpedia Ontology Properties" ;
