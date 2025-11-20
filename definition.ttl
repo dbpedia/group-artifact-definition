@@ -36,7 +36,8 @@
 
 databus-dbpedia-enterprise:live-fusion-kg-snapshot a databus:Group ;
   dct:title "DBpedia Live Fusion KG Snapshot" ;
-  dct:description "The **DBpedia Live Fusion KG Snapshot** is a continuously updated, conflict-resolved knowledge graph that fuses live data from **Wikidata** and **Wikipedia** into a unified, high-frequency snapshot. For Wikipedia, only specific language editions are considered—check each snapshot version for details on which languages are included. This KG provides a single, queryable source for enterprise and research consumption, supporting high-throughput querying, semantic reasoning, analytics, geospatial visualization, and natural language processing. This coherent, continuously refreshed KG enables advanced knowledge graph applications, enterprise integration, and cross-domain insights.
+  dct:description """
+The **DBpedia Live Fusion KG Snapshot** is a continuously updated, conflict-resolved knowledge graph that fuses live data from **Wikidata** and **Wikipedia** into a unified, high-frequency snapshot. For Wikipedia, only specific language editions are considered—check each snapshot version for details on which languages are included. This KG provides a single, queryable source for enterprise and research consumption, supporting high-throughput querying, semantic reasoning, analytics, geospatial visualization, and natural language processing. This coherent, continuously refreshed KG enables advanced knowledge graph applications, enterprise integration, and cross-domain insights.
 
 **Core Artifacts and Use Cases:**
 
@@ -58,13 +59,15 @@ databus-dbpedia-enterprise:live-fusion-kg-snapshot a databus:Group ;
 - **Multilingual support** through labels and textual descriptions.  
 - **Cross-KG interoperability** via links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=live-fusion-kg-snapshot) on the Live Fusion KG Snapshot." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=live-fusion-kg-snapshot) on the Live Fusion KG Snapshot.
+  """ ;
   dct:abstract "High-frequency, conflict-resolved knowledge graph that merges Live Wikipedia and Wikidata signals into a single, queryable snapshot for enterprise consumption." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-snapshot a databus:Group ;
   dct:title "DBpedia Wikipedia KG Enriched Snapshot" ;
-  dct:description "The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This enriched KG is designed for enterprise and research applications, supporting cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
+  dct:description """
+The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This enriched KG is designed for enterprise and research applications, supporting cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
 
 **Core Artifacts and Use Cases:**
 
@@ -86,13 +89,15 @@ databus-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-snapshot a databus:Grou
 - **Multilingual support** via labels and textual descriptions.  
 - **Cross-KG interoperability** through links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot) on the Wikipedia KG Enriched Snapshot." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot) on the Wikipedia KG Enriched Snapshot.
+  """ ;
   dct:abstract "DBpedia-based enrichment of structured Wikipedia extractions." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-snapshot a databus:Group ;
   dct:title "DBpedia Wikidata KG Enriched Snapshot" ;
-  dct:description "The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This KG is designed to support enterprise and research applications, including cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
+  dct:description """
+The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This KG is designed to support enterprise and research applications, including cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
 
 **Core Artifacts and Use Cases:**
 
@@ -114,13 +119,15 @@ databus-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-snapshot a databus:Group
 - **Multilingual support** via labels and textual descriptions.  
 - **Cross-KG interoperability** through links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot) on the Wikipedia KG Enriched Snapshot." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot) on the Wikipedia KG Enriched Snapshot.
+  """ ;
   dct:abstract "DBpedia-based enrichment of structured Wikidata extractions." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia:dbpedia-wikipedia-kg-snapshot a databus:Group ;
   dct:title "DBpedia Wikipedia KG Snapshot" ;
-  dct:description "The **DBpedia Wikipedia KG Snapshot** is the original extraction of structured data from **Wikipedia** before any DBpedia-based enrichment. It provides a coherent, queryable knowledge graph containing entity information directly extracted from Wikipedia, including instance types, labels, categories, coordinates, and textual descriptions. This KG serves as the foundation for enriched snapshots and supports research, analytics, and semantic reasoning, as well as cross-KG linking and multilingual NLP.
+  dct:description """
+The **DBpedia Wikipedia KG Snapshot** is the original extraction of structured data from **Wikipedia** before any DBpedia-based enrichment. It provides a coherent, queryable knowledge graph containing entity information directly extracted from Wikipedia, including instance types, labels, categories, coordinates, and textual descriptions. This KG serves as the foundation for enriched snapshots and supports research, analytics, and semantic reasoning, as well as cross-KG linking and multilingual NLP.
 
 **Core Artifacts and Use Cases:**
 
@@ -142,7 +149,8 @@ databus-dbpedia:dbpedia-wikipedia-kg-snapshot a databus:Group ;
 - **Multilingual support** through labels and textual descriptions.  
 - **Cross-KG interoperability** via links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-snapshot) on the Wikipedia KG Snapshot." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-snapshot) on the Wikipedia KG Snapshot.
+  """ ;
   dct:abstract "Original extraction of structured Wikipedia data before enrichment." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
@@ -158,7 +166,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <geo-coordinates> a databus:Artifact, sh:NodeShape ;
   dct:title "Geo Coordinates" ;
-  dct:description "The **Geo Coordinates** artifact provides spatial information for DBpedia entities, enabling geospatial reasoning, mapping, and linking to external datasets such as GeoNames. It supports geo-visualization, spatial queries, and geolocation search.
+  dct:description """
+The **Geo Coordinates** artifact provides spatial information for DBpedia entities, enabling geospatial reasoning, mapping, and linking to external datasets such as GeoNames. It supports geo-visualization, spatial queries, and geolocation search.
 
 **Encoded Information:**
 
@@ -169,7 +178,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 - **WGS84 longitude coordinates (decimal degrees)** for precise geospatial indexing. Encoded with the **wgs:long** property.  
 - **Compact GeoRSS point representations** for integration with GeoRSS feeds. Encoded with the **georss:point** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates) on the Geo Coordinates artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates) on the Geo Coordinates artifact.
+  """ ;
   dct:abstract "Spatial information including coordinates and geometry data. Use case: enables geo-visualization, mapping, and linking DBpedia entities to geospatial datasets (e.g., GeoNames). Information such as the longitude and latitude of entities." ;
   sh:property [ sh:path geo:geometry ; rule:fileName "geo-coordinates_graph=X_partition=geo-geometry" ; dct:description "WKT geometry representation, used for spatial queries and geometric reasoning."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path geo:lat ; rule:fileName "geo-coordinates_graph=X_partition=geo-lat" ; dct:description "Latitude for mapping and geolocation search."; rule:priority "10"^^xsd:integer  ];
@@ -182,7 +192,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <skos-categories> a databus:Artifact, sh:NodeShape ;
   dct:title "SKOS Categories" ;
-  dct:description "The **SKOS Categories** artifact provides a classification schema of categories and their semantic relationships using SKOS. It supports topic classification, content recommendation, taxonomy alignment, and semantic navigation across datasets.
+  dct:description """
+The **SKOS Categories** artifact provides a classification schema of categories and their semantic relationships using SKOS. It supports topic classification, content recommendation, taxonomy alignment, and semantic navigation across datasets.
 
 **Encoded Information:**
 
@@ -193,7 +204,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 - **Associative relations for cross-topic navigation.** Encoded with the **skos:related** property.  
 - **Textual definitions used for semantic search and explanations.** Encoded with the **skos:definition** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories) on the SKOS Categories artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories) on the SKOS Categories artifact.
+  """ ;
   dct:abstract "SKOS category classification schema. Defines a collection of categories and their relationships. The categories and their semantic relations are represented using SKOS. Use case: supports topic classification, content recommendation, and taxonomy alignment." ;
   sh:property [ sh:path dct:subject ; rule:fileName "skos-categories_graph=X_partition=dct-subject" ; dct:description "Links resources to Wikipedia category topics."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path skos:broader ; rule:fileName "skos-categories_graph=X_partition=skos-broader" ; dct:description "Defines parent categories for hierarchical browsing."; rule:priority "10"^^xsd:integer  ];
@@ -206,7 +218,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <textual-descriptions> a databus:Artifact, sh:NodeShape ;
   dct:title "Textual Descriptions" ;
-  dct:description "The **Textual Descriptions** artifact provides textual information about entities, including abstracts, comments, and descriptions. It supports entity summarization, search indexing, LLM fine-tuning, and question-answering over knowledge text.
+  dct:description """
+The **Textual Descriptions** artifact provides textual information about entities, including abstracts, comments, and descriptions. It supports entity summarization, search indexing, LLM fine-tuning, and question-answering over knowledge text.
 
 **Encoded Information:**
 
@@ -217,7 +230,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 - **Comments** for knowledge enrichment. Encoded with the **rdfs:comment** property.  
 - **Schema.org**-compatible descriptions for interoperability. Encoded with the **schema:description** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions) on the Textual Descriptions artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions) on the Textual Descriptions artifact.
+  """ ;
   dct:abstract "Textual information about entities, such as abstracts, comments, and descriptions. Use case: entity summarization, search indexing, LLM fine-tuning, and QA over knowledge text." ;
   sh:property [ sh:path dct:abstract ; rule:fileName "textual-descriptions_graph=X_partition=dct-abstract" ; dct:description "Standard abstract used for general summaries."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path dc:description ; rule:fileName "textual-descriptions_graph=X_partition=dc-description" ; dct:description "Free-text descriptions extracted from source content."; rule:priority "10"^^xsd:integer  ];
@@ -228,41 +242,46 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <labels> a databus:Artifact, sh:NodeShape ;
   dct:title "Labels" ;
-  dct:description "The **Labels** artifact provides multilingual labels for DBpedia entities, supporting entity resolution, multilingual NLP, and name disambiguation.
+  dct:description """
+The **Labels** artifact provides multilingual labels for DBpedia entities, supporting entity resolution, multilingual NLP, and name disambiguation.
 
 **Encoded Information:**
 
 - **Alternative names and aliases.** Encoded with the **dbo:alias** property.  
-- **Canonical labels in multiple languages.** Encoded with the **rdf:label** property.  
+- **Canonical labels in multiple languages.** Encoded with the **rdfs:label** property.  
 - **Primary names** used by Schema.org applications. Encoded with the **schema:name** property.  
 - **Alternate names** for NLP matching. Encoded with the **schema:alternateName** property.  
 - **Lexical relations** useful for ontology enrichment. Encoded with the **gold:hypernym** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels) on the Labels artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels) on the Labels artifact.
+  """ ;
   dct:abstract "Entity labels. Provides multilingual labels for each entity. Use case: entity resolution, multilingual NLP, and name disambiguation." ;
   sh:property [ sh:path dbo:alias ; rule:fileName "labels_graph=X_partition=dbo-alias" ; dct:description "Alternative names and aliases."; rule:priority "10"^^xsd:integer  ];
-  sh:property [ sh:path rdf:label ; rule:fileName "labels_graph=X_partition=rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
+  sh:property [ sh:path rdfs:label ; rule:fileName "labels_graph=X_partition=rdfs-label" ; dct:description "Canonical label in multiple languages."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:name ; rule:fileName "labels_graph=X_partition=schema-name" ; dct:description "Primary name used by Schema.org applications."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:alternateName ; rule:fileName "labels_graph=X_partition=schema-alternateName" ; dct:description "Alternate names for NLP matching."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path gold:hypernym ; rule:fileName "labels_graph=X_partition=gold-hypernym" ; dct:description "Lexical relations useful for ontology enrichment." ; rule:priority "10"^^xsd:integer ] .
 
 <instance-types> a databus:Artifact, sh:NodeShape ;
   dct:title "Instance Types" ;
-  dct:description "The **Instance Types** artifact provides entity type information, associating each entity with its corresponding class. It supports reasoning, schema integration, and knowledge graph summarization.
+  dct:description """
+The **Instance Types** artifact provides entity type information, associating each entity with its corresponding class. It supports reasoning, schema integration, and knowledge graph summarization.
 
 **Encoded Information:**
 
 - **RDF type** relations defining class membership. Encoded with the **rdf:type** property.  
 - **Schema.org type alignment** for web data interoperability. Encoded with the **schema:type** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types) on the Instance Types artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types) on the Instance Types artifact.
+  """ ;
   dct:abstract "Entity instance types. Each entity is associated with its corresponding type. Use case: reasoning, schema integration, and KG summarization." ;
   sh:property [ sh:path rdf:type ; rule:fileName "instance-types_graph=X_partition=rdf-type" ; dct:description "RDF type relation defining class membership."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path schema:type ; rule:fileName "instance-types_graph=X_partition=schema-type" ; dct:description "Schema.org type alignment for web data interoperability." ; rule:priority "10"^^xsd:integer ] .
 
 <links> a databus:Artifact, sh:NodeShape ;
   dct:title "Links" ;
-  dct:description "The **Links** artifact provides connections between entities across different knowledge graphs, supporting cross-KG linking, entity resolution, and identity propagation.
+  dct:description """
+The **Links** artifact provides connections between entities across different knowledge graphs, supporting cross-KG linking, entity resolution, and identity propagation.
 
 **Encoded Information:**
 
@@ -272,7 +291,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 - **Schema.org alignment links.** Encoded with the **schema:sameAs** property.  
 - **Exact match** links to Wikidata (property P2888). Encoded with the **wikidata:P2888** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links) on the Links artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links) on the Links artifact.
+  """ ;
   dct:abstract "Entity links. Links between entities across different knowledge graphs. Use case: cross-KG linking, entity resolution, and identity propagation across knowledge bases." ;
   sh:property [ sh:path owl:sameAs ; rule:fileName "links_graph=X_partition=owl-sameAs" ; dct:description "Identity link connecting identical entities across datasets."; rule:priority "10"^^xsd:integer  ];
   sh:property [ sh:path owl:differentFrom ; rule:fileName "links_graph=X_partition=owl-differentFrom" ; dct:description "Explicit distinction between similar but non-identical entities."; rule:priority "10"^^xsd:integer  ];
@@ -282,25 +302,29 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 
 <redirects> a databus:Artifact, sh:NodeShape ;
   dct:title "Redirects" ;
-  dct:description "The **Redirects** artifact provides mapping of entity URIs to canonical forms, supporting canonicalization, duplicate removal, and Wikipedia URI resolution.
+  dct:description """
+The **Redirects** artifact provides mapping of entity URIs to canonical forms, supporting canonicalization, duplicate removal, and Wikipedia URI resolution.
 
 **Encoded Information:**
 
 - **Mappings** from old or alternate URIs to canonical URIs. Encoded with the **dbo:redirects** property.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=redirects) on the Redirects artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=redirects) on the Redirects artifact.
+  """ ;
   dct:abstract "Redirect mapping triples. Use case: canonicalization, duplicate removal, and Wikipedia URI resolution." ;
   sh:property [ sh:path dbo:redirects ; rule:fileName "redirects_graph=X_partition=dbo-redirects" ; dct:description "Maps old or alternate URIs to canonical ones." ; rule:priority "10"^^xsd:integer ] .
 
 <dbpedia-ontology-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "DBpedia Ontology Properties" ;
-  dct:description "The **DBpedia Ontology Properties** artifact provides entity information modeled using the DBpedia ontology. It supports structured fact retrieval, ontology evolution tracking, and domain-specific querying.
+  dct:description """
+The **DBpedia Ontology Properties** artifact provides entity information modeled using the DBpedia ontology. It supports structured fact retrieval, ontology evolution tracking, and domain-specific querying.
 
 **Encoded Information:**
 
 - Entity triples with **predicates from the DBpedia ontology namespace.** Triples with predicate from the `http://dbpedia.org/ontology/` namespace.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties) on the DBpedia Ontology Properties artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties) on the DBpedia Ontology Properties artifact.
+  """ ;
   dct:abstract "Entities information modeled using the DBpedia ontology. Contains entity triples with predicates defined in the DBpedia ontology. Use case: structured fact retrieval, ontology evolution tracking, and domain-specific querying." ;
   sh:property [ sh:path rdf:predicate ; sh:pattern "^http://dbpedia.org/ontology/" ; rule:fileName "dbpedia-ontology-properties_graph=X_partition=dbo" ; dct:description "Ensures predicate belongs to DBpedia ontology namespace." ; rule:priority "20"^^xsd:integer ] .
 
@@ -310,7 +334,8 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 # that way we will get vocab=dbp or other cv's.
 <raw-source-properties> a databus:Artifact, sh:NodeShape ;
   dct:title "Raw Source Properties" ;
-  dct:description "The **Raw Source Properties** artifact provides entity information modeled using non-DBpedia ontologies. It contains triples with predicates defined in a wide range of external vocabularies, supporting data fusion, vocabulary discovery, and schema learning from open data.
+  dct:description """
+The **Raw Source Properties** artifact provides entity information modeled using non-DBpedia ontologies. It contains triples with predicates defined in a wide range of external vocabularies, supporting data fusion, vocabulary discovery, and schema learning from open data.
 
 **Encoded Information:**
 
@@ -320,10 +345,11 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 - **French DBpedia properties** - triples where the predicate matches `^http://fr.dbpedia.org/property/`.  
 - **GND authority and ontology properties** - triples where the predicate matches `^http://d-nb.info/gnd/` and related GND namespaces.  
 - **Common external vocabularies** - triples where the predicate matches FOAF, RDF, RDFS, SKOS, Schema.org, DC, DCAT, OWL, GeoSPARQL, BIBFRAME, and others.  
-- **Internal and fallback DBpedia predicates** - triples where the predicate matches `^http://([a-z]{2}\.)?dbpedia\.org/`.  
+- **Internal and fallback DBpedia predicates** - triples where the predicate matches `^http://([a-z]{2}\\.)?dbpedia\\.org/`.  
 - **Undefined predicates** - triples where the predicate matches `.*` for remaining properties not covered by other partitions.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties) on the Raw Source Properties artifact." ;
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties) on the Raw Source Properties artifact.
+  """ ;
   dct:abstract "Entity information modeled using non-DBpedia ontologies. Contains entity triples with predicates defined in other vocabularies. Use case: data fusion, vocabulary discovery, and schema learning from open data." ;
   # Wikidata
   sh:property [ sh:path rdf:predicate ; sh:pattern "^http://www.wikidata.org/entity/P" ; rule:fileName "raw-source-properties_graph=X_partition=wd-P" ; dct:description "Wikidata properties." ; rule:priority "20"^^xsd:integer ] ;
