@@ -372,6 +372,8 @@ The **Raw Source Properties** artifact provides entity information modeled using
 - **Internal and fallback DBpedia predicates** - triples where the predicate matches `^http://([a-z]{2}\\.)?dbpedia\\.org/`.  
 - **Undefined predicates** - triples where the predicate matches `.*` for remaining properties not covered by other partitions.  
 
+The exact list of files for this artifact differs across knowledge graphs; some offer only several files, while others supply a significantly larger collection of files.
+
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties) on the Raw Source Properties artifact.
   """ ;
   dct:abstract "Entity information modeled using non-DBpedia ontologies. Contains entity triples with predicates defined in other vocabularies. Use case: data fusion, vocabulary discovery, and schema learning from open data." ;
