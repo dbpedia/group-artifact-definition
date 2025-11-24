@@ -151,12 +151,36 @@ The **DBpedia Wikipedia KG Snapshot** is the original extraction of structured d
 
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-snapshot) on the Wikipedia KG Snapshot.
   """ ;
-  dct:abstract "Original extraction of structured Wikipedia data before enrichment." ;
+  dct:abstract "The DBpedia Wikidata KG Snapshot provides the raw, unmodified extraction of Wikidata’s structured content prior to any enrichment." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
   dct:title "DBpedia Wikidata KG Snapshot" ;
-  dct:description "Original extraction of structured Wikidata data before enrichment. [Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikidata-kg-snapshot)" ;
+  dct:description """The **DBpedia Wikidata KG Snapshot** is a knowledge graph that provides the original extraction of structured Wikidata data before any enrichment or ontology-based mapping. It serves as a clean, source-level snapshot that captures Wikidata’s factual content in RDF, organized into thematic artifacts for downstream processing, integration, and analytics. This KG is ideal for applications that require access to raw Wikidata information while benefiting from DBpedia’s uniform RDF packaging.
+
+**Core Artifacts and Use Cases:**
+
+| Artifact | Description | Use Case | Feedback |
+|----------|-------------|----------|----------|
+| **geo-coordinates** | Spatial information such as coordinates and geometry, encoded using `geo:geometry` | Supports geospatial analytics, map-based applications, and spatial KG integration | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=geo-coordinates) |
+| **skos-categories** | Category assignments represented with SKOS vocabulary | Enables topic clustering, hierarchical browsing, and lightweight taxonomy alignment | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=skos-categories) |
+| **textual-descriptions** | Short textual descriptions extracted from Wikidata description fields | Useful for entity summarization, semantic search, LLM pretraining, and indexing | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=textual-descriptions) |
+| **labels** | Human-readable labels for entities across languages | Enables entity naming, multilingual NLP, and disambiguation | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=labels) |
+| **instance-types** | Entity type assertions using `rdf:type` | Provides schema grounding, supports reasoning, and enables semantic grouping of entities | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=instance-types) |
+| **links** | Outgoing equivalence links such as `owl:sameAs` between Wikidata and other datasets | Supports cross-KG alignment, identity resolution, and integration with DBpedia | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=links) |
+| **redirects** | Redirect mappings linking alternate or outdated URIs to canonical ones | Useful for deduplication, entity normalization, and stable URI resolution | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=redirects) |
+| **dbpedia-ontology-properties** | Triples where predicates come from the DBpedia ontology namespace | Enables structured fact retrieval, schema analysis, and ontology-driven querying | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-ontology-properties) |
+| **raw-source-properties** | Triples using original Wikidata predicates or other non-DBpedia vocabularies | Supports data fusion, predicate discovery, and learning schema patterns from raw data | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties) |
+
+**Highlights:**  
+- Preserves **original Wikidata structure** prior to DBpedia-level enrichment.  
+- Offers **clean RDF extraction** suitable for analysis and custom processing.  
+- Ensures **interoperability** with other DBpedia datasets through shared identifiers and links.  
+- Designed for **research, data fusion, and KG engineering** scenarios requiring raw predicates.  
+- Supports **multilingual and cross-domain** applications via labels and textual descriptions.
+
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikidata-kg-snapshot) on the Wikidata KG Snapshot.
+""" ;
   dct:abstract "Original extraction of structured Wikidata data before enrichment." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
