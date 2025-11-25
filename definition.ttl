@@ -151,7 +151,7 @@ The **DBpedia Wikipedia KG Snapshot** is the original extraction of structured d
 
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-snapshot) on the Wikipedia KG Snapshot.
   """ ;
-  dct:abstract "The DBpedia Wikidata KG Snapshot provides the raw, unmodified extraction of Wikidata’s structured content prior to any enrichment." ;
+  dct:abstract "Original extraction of structured Wikipedia data before enrichment." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
