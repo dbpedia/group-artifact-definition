@@ -34,10 +34,10 @@
 # Group Definitions
 ########################################################
 
-databus-dbpedia-enterprise:live-fusion-kg-snapshot a databus:Group ;
-  dct:title "DBpedia Live Fusion KG Snapshot" ;
+databus-dbpedia-enterprise:live-fusion-kg-dump a databus:Group ;
+  dct:title "DBpedia Live Fusion KG Dump" ;
   dct:description """
-The **DBpedia Live Fusion KG Snapshot** is a continuously updated, conflict-resolved knowledge graph that fuses live data from **Wikidata** and **Wikipedia** into a unified, high-frequency snapshot. For Wikipedia, only specific language editions are considered—check each snapshot version for details on which languages are included. This KG provides a single, queryable source for enterprise and research consumption, supporting high-throughput querying, semantic reasoning, analytics, geospatial visualization, and natural language processing. This coherent, continuously refreshed KG enables advanced knowledge graph applications, enterprise integration, and cross-domain insights.
+The **DBpedia Live Fusion KG Dump** is a continuously updated, conflict-resolved knowledge graph that fuses live data from **Wikidata** and **Wikipedia** into a unified, high-frequency dump. For Wikipedia, only specific language editions are considered — check each dump version for details on which languages are included. This KG provides a single, queryable source for enterprise and research consumption, supporting high-throughput querying, semantic reasoning, analytics, geospatial visualization, and natural language processing. This coherent, continuously refreshed KG enables advanced knowledge graph applications, enterprise integration, and cross-domain insights.
 
 **Core Artifacts and Use Cases:**
 
@@ -59,15 +59,15 @@ The **DBpedia Live Fusion KG Snapshot** is a continuously updated, conflict-reso
 - **Multilingual support** through labels and textual descriptions.  
 - **Cross-KG interoperability** via links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=live-fusion-kg-snapshot) on the Live Fusion KG Snapshot.
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-live-fusion-kg-dump) on the DBpedia Live Fusion KG Dump.
   """ ;
-  dct:abstract "High-frequency, conflict-resolved knowledge graph that merges Live Wikipedia and Wikidata signals into a single, queryable snapshot for enterprise consumption." ;
+  dct:abstract "High-frequency, conflict-resolved knowledge graph that merges Live Wikipedia and Wikidata signals into a single, queryable dump for enterprise consumption." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
-databus-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-snapshot a databus:Group ;
-  dct:title "DBpedia Wikipedia KG Enriched Snapshot" ;
+databus-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-dump a databus:Group ;
+  dct:title "DBpedia Wikipedia KG Enriched Dump" ;
   dct:description """
-The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This enriched KG is designed for enterprise and research applications, supporting cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
+The **DBpedia Wikipedia KG Enriched Dump** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This enriched KG is designed for enterprise and research applications, supporting cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
 
 **Core Artifacts and Use Cases:**
 
@@ -89,15 +89,15 @@ The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriche
 - **Multilingual support** via labels and textual descriptions.  
 - **Cross-KG interoperability** through links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot) on the Wikipedia KG Enriched Snapshot.
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikipedia-kg-enriched-dump) on the DBpedia Wikipedia KG Enriched Dump.
   """ ;
   dct:abstract "DBpedia-based enrichment of structured Wikipedia extractions." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
-databus-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-snapshot a databus:Group ;
-  dct:title "DBpedia Wikidata KG Enriched Snapshot" ;
+databus-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-dump a databus:Group ;
+  dct:title "DBpedia Wikidata KG Enriched Dump" ;
   dct:description """
-The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriches structured Wikipedia extractions using DBpedia. It provides a coherent, queryable KG that combines Wikipedia-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This KG is designed to support enterprise and research applications, including cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
+The **DBpedia Wikidata KG Enriched Dump** is a knowledge graph that enriches structured Wikidata extractions using DBpedia. It provides a coherent, queryable KG that combines Wikidata-derived entity information with DBpedia-based enrichment, enabling semantic reasoning, analytics, and knowledge integration across datasets. This KG is designed to support enterprise and research applications, including cross-KG linking, multilingual NLP, geospatial visualization, and entity summarization.
 
 **Core Artifacts and Use Cases:**
 
@@ -113,21 +113,21 @@ The **DBpedia Wikipedia KG Enriched Snapshot** is a knowledge graph that enriche
 | **raw-source-properties** | Entity triples using non-DBpedia vocabularies | Useful for data fusion, vocabulary discovery, and schema learning from open data | [Provide Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=raw-source-properties) |
 
 **Highlights:**  
-- **DBpedia-based enrichment** adds structured knowledge to Wikipedia-extracted entities.  
+- **DBpedia-based enrichment** adds structured knowledge to Wikidata-extracted entities.  
 - **Semantic consistency** ensures coherent integration of entity types, labels, and properties.  
 - **Enterprise-ready** for analytics, reporting, and semantic applications.  
 - **Multilingual support** via labels and textual descriptions.  
 - **Cross-KG interoperability** through links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-enriched-snapshot) on the Wikipedia KG Enriched Snapshot.
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikidata-kg-enriched-dump) on the DBpedia Wikidata KG Enriched Dump.
   """ ;
   dct:abstract "DBpedia-based enrichment of structured Wikidata extractions." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
-databus-dbpedia:dbpedia-wikipedia-kg-snapshot a databus:Group ;
-  dct:title "DBpedia Wikipedia KG Snapshot" ;
+databus-dbpedia:dbpedia-wikipedia-kg-dump a databus:Group ;
+  dct:title "DBpedia Wikipedia KG Dump" ;
   dct:description """
-The **DBpedia Wikipedia KG Snapshot** is the original extraction of structured data from **Wikipedia** before any DBpedia-based enrichment. It provides a coherent, queryable knowledge graph containing entity information directly extracted from Wikipedia, including instance types, labels, categories, coordinates, and textual descriptions. This KG serves as the foundation for enriched snapshots and supports research, analytics, and semantic reasoning, as well as cross-KG linking and multilingual NLP.
+The **DBpedia Wikipedia KG Dump** is the original extraction of structured data from **Wikipedia** before any DBpedia-based enrichment. It provides a coherent, queryable knowledge graph containing entity information directly extracted from Wikipedia, including instance types, labels, categories, coordinates, and textual descriptions. This KG serves as the foundation for enriched dumps and supports research, analytics, and semantic reasoning, as well as cross-KG linking and multilingual NLP.
 
 **Core Artifacts and Use Cases:**
 
@@ -144,19 +144,19 @@ The **DBpedia Wikipedia KG Snapshot** is the original extraction of structured d
 
 **Highlights:**  
 - **Original extraction** provides raw structured data directly from Wikipedia.  
-- **Foundation for enrichment** used in DBpedia Wikipedia KG Enriched Snapshot.  
+- **Foundation for enrichment** used in DBpedia Wikipedia KG Enriched Dump.  
 - **Supports semantic applications** including reasoning, search, and analytics.  
 - **Multilingual support** through labels and textual descriptions.  
 - **Cross-KG interoperability** via links and instance types.  
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikipedia-kg-snapshot) on the Wikipedia KG Snapshot.
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikipedia-kg-dump) on the DBpedia Wikipedia KG Dump.
   """ ;
   dct:abstract "Original extraction of structured Wikipedia data before enrichment." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
-databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
-  dct:title "DBpedia Wikidata KG Snapshot" ;
-  dct:description """The **DBpedia Wikidata KG Snapshot** is a knowledge graph that provides the original extraction of structured Wikidata data before any enrichment or ontology-based mapping. It serves as a clean, source-level snapshot that captures Wikidata’s factual content in RDF, organized into thematic artifacts for downstream processing, integration, and analytics. This KG is ideal for applications that require access to raw Wikidata information while benefiting from DBpedia’s uniform RDF packaging.
+databus-dbpedia:dbpedia-wikidata-kg-dump a databus:Group ;
+  dct:title "DBpedia Wikidata KG Dump" ;
+  dct:description """The **DBpedia Wikidata KG Dump** is a knowledge graph that provides the original extraction of structured Wikidata data before any enrichment or ontology-based mapping. It serves as a clean, source-level dump that captures Wikidata’s factual content in RDF, organized into thematic artifacts for downstream processing, integration, and analytics. This KG is ideal for applications that require access to raw Wikidata information while benefiting from DBpedia’s uniform RDF packaging.
 
 **Core Artifacts and Use Cases:**
 
@@ -179,7 +179,7 @@ databus-dbpedia:dbpedia-wikidata-kg-snapshot a databus:Group ;
 - Designed for **research, data fusion, and KG engineering** scenarios requiring raw predicates.  
 - Supports **multilingual and cross-domain** applications via labels and textual descriptions.
 
-[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=wikidata-kg-snapshot) on the Wikidata KG Snapshot.
+[Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikidata-kg-dump) on the DBpedia Wikidata KG Dump.
 """ ;
   dct:abstract "Original extraction of structured Wikidata data before enrichment." ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
