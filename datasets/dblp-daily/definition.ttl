@@ -1,0 +1,18 @@
+@prefix databus: <https://dataid.dbpedia.org/databus#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rule: <https://example.org/rule#> .
+@prefix schema: <https://schema.org/> .
+@prefix user: <https://databus.dbpedia.org/fhofer/> .
+
+user:dblp a databus:Group ;
+    dct:title "DBLP" ;
+    dct:description "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc." ;
+    dct:abstract "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc." ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf> ;
+    rule:hasArtifact <dblp-daily-kg-dump> .
+
+<dblp-daily-kg-dump> a databus:Artifact ;
+    dct:title "Daily Snapshot" ;
+    dct:description "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc." ;
+    dct:abstract "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc." ;
+    schema:keywords "dblp", "computer", "science", "bibliography", "knowledge-graph", "open data" .

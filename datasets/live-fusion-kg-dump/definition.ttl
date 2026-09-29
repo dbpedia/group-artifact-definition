@@ -62,6 +62,7 @@ The **DBpedia Live Fusion KG Dump** is a continuously updated, conflict-resolved
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-live-fusion-kg-dump) on the DBpedia Live Fusion KG Dump.
   """ ;
   dct:abstract "High-frequency, conflict-resolved knowledge graph that merges Live Wikipedia and Wikidata signals into a single, queryable dump for enterprise consumption." ;
+  dct:license <https://spdx.org/licenses/BUSL-1.1.html> ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia-enterprise:dbpedia-wikipedia-kg-enriched-dump a databus:Group ;
@@ -92,6 +93,7 @@ The **DBpedia Wikipedia KG Enriched Dump** is a knowledge graph that enriches st
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikipedia-kg-enriched-dump) on the DBpedia Wikipedia KG Enriched Dump.
   """ ;
   dct:abstract "DBpedia-based enrichment of structured Wikipedia extractions." ;
+  dct:license <https://spdx.org/licenses/BUSL-1.1.html> ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia-enterprise:dbpedia-wikidata-kg-enriched-dump a databus:Group ;
@@ -122,6 +124,7 @@ The **DBpedia Wikidata KG Enriched Dump** is a knowledge graph that enriches str
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikidata-kg-enriched-dump) on the DBpedia Wikidata KG Enriched Dump.
   """ ;
   dct:abstract "DBpedia-based enrichment of structured Wikidata extractions." ;
+  dct:license <https://spdx.org/licenses/BUSL-1.1.html> ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia:dbpedia-wikipedia-kg-dump a databus:Group ;
@@ -152,6 +155,7 @@ The **DBpedia Wikipedia KG Dump** is the original extraction of structured data 
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikipedia-kg-dump) on the DBpedia Wikipedia KG Dump.
   """ ;
   dct:abstract "Original extraction of structured Wikipedia data before enrichment." ;
+  dct:license <https://spdx.org/licenses/CC-BY-SA-4.0.html> ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 databus-dbpedia:dbpedia-wikidata-kg-dump a databus:Group ;
@@ -182,6 +186,7 @@ databus-dbpedia:dbpedia-wikidata-kg-dump a databus:Group ;
 [Submit Feedback](https://github.com/dbpedia/group-artifact-definition/issues/new?title=dbpedia-wikidata-kg-dump) on the DBpedia Wikidata KG Dump.
 """ ;
   dct:abstract "Original extraction of structured Wikidata data before enrichment." ;
+  dct:license <https://spdx.org/licenses/CC-BY-SA-4.0.html> ;
   rule:hasArtifact <geo-coordinates>, <skos-categories>, <textual-descriptions>, <labels>, <instance-types>, <links>, <redirects>, <dbpedia-ontology-properties>, <raw-source-properties> .
 
 ########################################################

@@ -1,0 +1,34 @@
+@prefix databus: <https://dataid.dbpedia.org/databus#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rule: <https://example.org/rule#> .
+@prefix schema: <https://schema.org/> .
+@prefix user: <https://databus.dbpedia.org/knowledge-graph-catalog-laundromat/> .
+
+user:orkg a databus:Group ;
+    dct:title "Cleaned Version of ORKG" ;
+    dct:abstract "Cleaned and republished version of ORKG from https://databus.dbpedia.org/knowledge-graph-catalog/orkg." ;
+    dct:description """
+Cleaned and republished version of ORKG from [https://databus.dbpedia.org/knowledge-graph-catalog/orkg](https://databus.dbpedia.org/knowledge-graph-catalog/orkg)
+KG Laundromat downloads, parses, and cleans new KG versions of the KG Catalog and provides cleaned data and debug information.
+
+The parser checks regularly for new versions of the ORKG dataset. When a new version is found, all files of each artifact are downloaded, cleaned, and republished.
+The parser mirrors the original dataset hierarchy and provides, for each consumed file, a cleaned version of the file together with the fallout, i.e., debug information about the parsing process and any issues that were encountered.
+Additionally, an initial simple parser artifact is currently provided, which contains information about the parser process itself and its configuration.
+
+Original abstract of ORKG:
+The Open Research Knowledge Graph provides scholarly knowledge as a KG enabling querying, comparison, and reuse of scientific information.
+    """ ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/rdf> ;
+    rule:hasArtifact <orkg-daily-dump>, <parser> .
+
+<orkg-daily-dump> a databus:Artifact ;
+    dct:title "Cleaned Version of ORKG Daily dump" ;
+    dct:abstract "Cleaned and republished version of ORKG Daily dump from https://databus.dbpedia.org/knowledge-graph-catalog/orkg/orkg-daily-dump." ;
+    dct:description "Cleaned and republished version of ORKG Daily dump from [https://databus.dbpedia.org/knowledge-graph-catalog/orkg/orkg-daily-dump](https://databus.dbpedia.org/knowledge-graph-catalog/orkg/orkg-daily-dump)" ;
+    schema:keywords "rdf", "knowledge graph", "scholarly knowledge", "parsed data", "parsing fallout" .
+
+<parser> a databus:Artifact ;
+    dct:title "KG Laundromat Parser Information for ORKG" ;
+    dct:abstract "Initial simple version of additional parser information for the Open Research Knowledge Graph." ;
+    dct:description "Initial simple version of additional parser information for the Open Research Knowledge Graph." ;
+    schema:keywords "parser", "knowledge graph", "scholarly knowledge" .
