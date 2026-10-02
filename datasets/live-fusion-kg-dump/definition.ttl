@@ -22,8 +22,10 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix databus: <https://dataid.dbpedia.org/databus#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix databus-dbpedia: <https://databus.dbpedia.org/dbpedia/> . # add databus
-@prefix databus-dbpedia-enterprise: <https://databus.dbpedia.org/dbpedia-enterprise/> .
+# @prefix databus-dbpedia: <https://databus.dbpedia.org/dbpedia/> .
+# @prefix databus-dbpedia-enterprise: <https://databus.dbpedia.org/dbpedia-enterprise/> .
+@prefix databus-dbpedia: <https://databus.dbpedia.org/fhofer/> .
+@prefix databus-dbpedia-enterprise: <https://databus.dbpedia.org/fhofer/> .
 @prefix databus-dbpedia-io: <https://databus.dbpedia.org/dbpedia-io/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix wikidata: <http://www.wikidata.org/entity/> .
